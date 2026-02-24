@@ -1,0 +1,48 @@
+project:
+  name: us-watershed-risk-model
+  version: "0.1.0"
+
+scope:
+  geography:
+    huc_level: 4
+  time:
+    start_year: 1995
+    end_year: 2024
+  aggregation:
+    temporal: "annual"
+  programs:
+    target: "cwa"
+    include: ["cwa"]
+
+storage:
+  mode: "local"
+  dataset_id: "v1"
+  local_paths:
+    raw: "data/raw"
+    interim: "data/interim"
+    processed: "data/processed"
+    external: "data/external"
+    samples: "data/samples"
+    logs: "logs"
+
+data_sources:
+  epa_echo:
+    enabled: true
+  cbp_naics:
+    enabled: true
+    naics_grain: "2-digit"
+  population:
+    enabled: true
+  watersheds:
+    enabled: true
+    county_to_huc_method: "area_weight"
+
+modeling:
+  random_seed: 42
+  train_test_split:
+    method: "time"
+    test_years: 3
+
+outputs:
+  enforcement_index:
+    enabled: false
