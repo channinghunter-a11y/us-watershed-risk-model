@@ -224,5 +224,16 @@ data/raw/
 __pycache__/
 .venv/
 
+# Data (never commit)
+data/external/
+data/raw/
+data/processed/
+
+# Python env + caches
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
 # logs
 logs/
