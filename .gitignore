@@ -217,5 +217,12 @@ data/interim/
 data/processed/
 data/external/
 
+data/external/
+data/raw/
+*.parquet
+*.zip
+__pycache__/
+.venv/
+
 # logs
 logs/
